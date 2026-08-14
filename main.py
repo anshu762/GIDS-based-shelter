@@ -38,15 +38,15 @@ DATASET_FILE = PROJECT_ROOT / "Dataset1.xlsx"
 # dynamically instead of keeping them here.
 # ==========================================================
 
-DISASTER_TYPE = "Earthquake"
+DISASTER_TYPE = "Cyclone"
 
-EPICENTER_NAME = "Trombay"
+EPICENTER_NAME = "Goregaon"
 
-EPICENTER_LAT = 19.0203870
+EPICENTER_LAT = 19.1551480
 
-EPICENTER_LON = 72.9098850
+EPICENTER_LON = 72.8678510
 
-RADIUS_KM = 2.0
+RADIUS_KM = 8.0
 
 
 MODULE_FILES = {
@@ -164,7 +164,13 @@ def run_module1():
     print("-" * 72)
 
     module = load_module(1)
-    scenario_file = module.run()
+    scenario_file = module.run(
+        DISASTER_TYPE,
+        EPICENTER_NAME,
+        EPICENTER_LAT,
+        EPICENTER_LON,
+        RADIUS_KM,
+    )
 
     if not scenario_file:
         raise RuntimeError(
