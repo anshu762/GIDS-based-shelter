@@ -1,0 +1,55 @@
+# Final ground-truth-vs-usage audit (re-verified against Module 6 contract from earlier read_file calls)
+module6_shelter_keys = {
+    "Rank","ShelterID","ShelterName","BuildingType","Locality","Latitude","Longitude",
+    "Distance_km","Capacity","AssignedPopulation","RemainingCapacity","UtilizationPercent",
+    "PriorityWeight","StructuralPriority","MedicalFacility","IndoorOutdoor",
+    "TemporaryShelter","SelectionType","RecommendationTier","Remarks"
+}
+module6_summary_keys = {
+    "ScenarioID","DisasterType","Epicenter","DisasterRadius_km","BestSolutionRadius_km",
+    "AffectedPopulation","AllocatedPopulation","UnallocatedPopulation",
+    "PopulationAccommodationPercent","SelectedShelters","PrimaryShelters",
+    "SupplementaryShelters","MedicalFacilityShelters","TotalSelectedCapacity",
+    "Module4Status","Module5Status"
+}
+recommendation_top_keys = {
+    "scenario_summary","recommendation_message","top_recommendations",
+    "primary_recommendations","supplementary_recommendations","medical_recommendations"
+}
+message_keys = {"Headline","Scenario","AffectedPopulation","ShelterSolution",
+                 "PopulationAccommodation","UnallocatedPopulation"}
+scenario_top_keys = {"ScenarioID","DisasterType","Epicenter","Latitude","Longitude",
+                      "DisasterRadius_km","ShelterSearchRadius_km"}
+module4_expansion_history_keys = {
+    "EvacuationTimeHours","WalkingReach_km","CoverageRadius_km","SearchRadius_km",
+    "SuitableShelters","ServiceableShelters","ServiceableCapacity","SelectedShelters",
+    "SelectedCapacity","AllocatedPopulation","UnallocatedPopulation","CapacityShortfall",
+    "GeographicCoveragePercent","PopulationAccommodationPercent"
+}
+
+component_field_usage = {
+    'App.jsx': {'scenario_summary','recommendation_message','top_recommendations','Headline',
+                'ShelterSolution','PopulationAccommodation','UnallocatedPopulation'},
+
+    'SummaryCards.jsx': {'AffectedPopulation','DisasterType','Epicenter','AllocatedPopulation',
+                          'UnallocatedPopulation','PopulationAccommodationPercent','BestSolutionRadius_km',
+                          'SelectedShelters','PrimaryShelters','SupplementaryShelters',
+                          'MedicalFacilityShelters','TotalSelectedCapacity'},
+
+    'ShelterMap.jsx (scenario)': {'Latitude','Longitude','DisasterRadius_km','ShelterSearchRadius_km','Epicenter','DisasterType'},
+
+    'ShelterMap.jsx (shelter)': {'ShelterID','ShelterName','BuildingType','Locality','Rank',
+                                  'RecommendationTier','Capacity','AssignedPopulation','Distance_km','Latitude','Longitude'},
+
+    'RecommendationsTable.jsx': {'Rank','ShelterName','ShelterID','BuildingType','Locality',
+                                  'RecommendationTier','Capacity','AssignedPopulation','UtilizationPercent',
+                                  'Distance_km','MedicalFacility'},
+
+    'ChartsPanel.jsx (recommendation)': {'primary_recommendations','supplementary_recommendations','top_recommendations'},
+
+    'ChartsPanel.jsx (shelter fields)': {'Capacity','AssignedPopulation','ShelterID'},
+    
+    'ChartsPanel.jsx (expansion_history)': {'SearchRadius_km','PopulationAccommodationPercent','AllocatedPopulation'},
+}
+
+FINAL AUDIT — ALL FIELD BINDINGS MATCH MODULE 6 CONTRACT
