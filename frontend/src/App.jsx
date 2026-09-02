@@ -121,7 +121,7 @@ export default function App() {
         <div className="mx-auto flex max-w-8xl flex-col gap-1 px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-lg text-white shadow-sm">
-              {"\u26A0\uFE0F"}
+              <img src="/logo.png" alt="GIDS Logo" className="h-8 w-8" />
             </span>
             <div>
               <h1 className="text-lg font-bold leading-tight text-slate-900 sm:text-xl">
