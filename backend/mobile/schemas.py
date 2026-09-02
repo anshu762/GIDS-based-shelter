@@ -96,6 +96,7 @@ class AssignmentResponse(BaseModel):
         "STALE_LOCATION",
         "NO_SCENARIO",
         "NO_ELIGIBLE_SHELTER",
+        "OUTSIDE_DISASTER_AREA",
     ]
     location_used: LocationUsedResponse | None = None
     shelter: ShelterResponse | None = None
@@ -142,6 +143,7 @@ class NearestSheltersResponse(BaseModel):
         "STALE_LOCATION",
         "NO_SCENARIO",
         "NO_ELIGIBLE_SHELTER",
+        "OUTSIDE_DISASTER_AREA",
     ]
     location_used: LocationUsedResponse | None = None
     shelters: list[ShelterResponse]
